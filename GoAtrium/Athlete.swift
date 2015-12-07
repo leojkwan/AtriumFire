@@ -14,6 +14,7 @@ public enum Name {
     case lastName
 }
 
+
 struct Athlete {
     // required
     let uid: String

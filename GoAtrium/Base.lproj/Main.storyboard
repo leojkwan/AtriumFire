@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSq-Wr-xm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="750"/>
+            <point key="canvasLocation" x="-1242" y="242"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="xYT-Pr-69l">
@@ -60,12 +60,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bql-e2-Wzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="88"/>
+            <point key="canvasLocation" x="1234" y="166"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="r1s-R3-OFM">
             <objects>
-                <viewController id="Sjw-h4-1CW" sceneMemberID="viewController">
+                <viewController id="Sjw-h4-1CW" customClass="ViewController" customModule="GoAtrium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OMf-kN-dr2"/>
                         <viewControllerLayoutGuide type="bottom" id="Yii-d8-97o"/>
@@ -73,14 +73,37 @@
                     <view key="view" contentMode="scaleToFill" id="e1U-w6-ghK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJa-OK-5pg">
+                                <rect key="frame" x="180" y="68" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3R-S2-G9R">
+                                <rect key="frame" x="279" y="28" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xie-or-tqY">
+                                <rect key="frame" x="278" y="221" width="43" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="tW9-pY-WNP"/>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="i3R-S2-G9R" id="R20-As-MYy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QCM-ik-Wm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592" y="-180"/>
+            <point key="canvasLocation" x="147" y="-335"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7CM-zp-Ec7">
@@ -100,12 +123,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhO-cM-LkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-238" y="242"/>
+            <point key="canvasLocation" x="-490" y="232"/>
         </scene>
         <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="GoAtrium" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FriendsViewController" customModule="GoAtrium" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -114,8 +137,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nl4-g3-pwl">
-                                <rect key="frame" x="0.0" y="150" width="600" height="450"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nl4-g3-pwl">
+                                <rect key="frame" x="0.0" y="101" width="600" height="450"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -172,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="494" y="767"/>
+            <point key="canvasLocation" x="161" y="652"/>
         </scene>
     </scenes>
 </document>

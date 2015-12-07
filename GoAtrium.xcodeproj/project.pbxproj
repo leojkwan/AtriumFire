@@ -17,7 +17,7 @@
 		949907CB1C0A7DBF00CBF613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 949907C91C0A7DBF00CBF613 /* LaunchScreen.storyboard */; };
 		949907D61C0A7DBF00CBF613 /* GoAtriumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949907D51C0A7DBF00CBF613 /* GoAtriumTests.swift */; };
 		949907E11C0A7DBF00CBF613 /* GoAtriumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949907E01C0A7DBF00CBF613 /* GoAtriumUITests.swift */; };
-		94B5BD871C0B68F40063C704 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5BD861C0B68F40063C704 /* ProfileViewController.swift */; };
+		94B5BD871C0B68F40063C704 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5BD861C0B68F40063C704 /* FriendsViewController.swift */; };
 		94B5BD891C0B6CDC0063C704 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B5BD881C0B6CDC0063C704 /* Athlete.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 		949907DC1C0A7DBF00CBF613 /* GoAtriumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoAtriumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		949907E01C0A7DBF00CBF613 /* GoAtriumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoAtriumUITests.swift; sourceTree = "<group>"; };
 		949907E21C0A7DBF00CBF613 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94B5BD861C0B68F40063C704 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		94B5BD861C0B68F40063C704 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		94B5BD881C0B6CDC0063C704 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 		BD682CB81B18BDBCAD81BA8F /* Pods-GoAtrium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAtrium.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoAtrium/Pods-GoAtrium.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C0F5F2F01F3E6CB24099BC /* Pods-GoAtrium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoAtrium.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoAtrium/Pods-GoAtrium.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			children = (
 				949907C21C0A7DBF00CBF613 /* ViewController.swift */,
 				940D19281C0BE8D70091EEE1 /* LoginViewController.swift */,
-				94B5BD861C0B68F40063C704 /* ProfileViewController.swift */,
+				94B5BD861C0B68F40063C704 /* FriendsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B5BD871C0B68F40063C704 /* ProfileViewController.swift in Sources */,
+				94B5BD871C0B68F40063C704 /* FriendsViewController.swift in Sources */,
 				949907C31C0A7DBF00CBF613 /* ViewController.swift in Sources */,
 				949907C11C0A7DBF00CBF613 /* AppDelegate.swift in Sources */,
 				940D19291C0BE8D70091EEE1 /* LoginViewController.swift in Sources */,
@@ -521,7 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leojkwan.GoAtrium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GoAtrium-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -535,7 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leojkwan.GoAtrium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GoAtrium-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

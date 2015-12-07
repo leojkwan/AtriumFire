@@ -1,14 +1,13 @@
 import UIKit
 import Firebase
 
-
-class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var friendsTableView: UITableView!
+    var currentUser:Athlete!
     
     // Initialize empty array.
-    var currentUsers: [String] = [String]()
-    var user:Athlete!
+    var onlineUsers: [String] = [String]()
     
     // base url for users
     let userbaseRef = Firebase(url: "https://goatrium.firebaseio.com/userbase")
@@ -31,10 +30,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         userbaseRef.observeAuthEventWithBlock { authData in
             
             // Create a child reference with FB user id
-            self.user = Athlete(authData: authData)
+            self.currentUser = Athlete(authData: authData)
             
             // Create Firebase URL paths
-            if let currentUser = self.userbaseRef.childByAppendingPath(self.user.displayname) {
+            if let currentUser = self.userbaseRef.childByAppendingPath(self.currentUser.displayname) {
                 self.currentUserRef = currentUser;
             }
             
@@ -42,8 +41,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.userInfoRef = userInfo
             }
             
-            self.currentUserRef.setValue(self.user.email)
-            self.userInfoRef.setValue(self.user.toAnyObject());
+            self.currentUserRef.setValue(self.currentUser.email)
+            self.userInfoRef.setValue(self.currentUser.toAnyObject());
             // When the user disconnects remove the value
             
             self.currentUserRef.onDisconnectRemoveValue()
@@ -55,10 +54,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 // Add the new user to the local array
                 let firstName = snap.key as String
-                self.currentUsers.append(firstName)
+                self.onlineUsers.append(firstName)
                 
                 // Get the index of the current row
-                let row = self.currentUsers.count - 1
+                let row = self.onlineUsers.count - 1
                 
                 // Create an NSIndexPath for the row
                 let indexPath = NSIndexPath(forRow: row, inSection: 0)
@@ -74,16 +73,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             // Create a listener for the delta deletions to animate removes from the table view
             self.userbaseRef.observeEventType(.ChildRemoved, withBlock: { (snap: FDataSnapshot!) -> Void in
-                // Get the email to find
+                // Get the email to find.
                 let emailToFind: String! = snap.key as String
                 
-                // Loop to find the email in the array
-                for(index, email) in self.currentUsers.enumerate() {
+                // Loop to find the email in the array.
+                for(index, email) in self.onlineUsers.enumerate() {
                     let emailAtThisIndex = email
                     // If the email is found, delete it from the table with an animation
                     if emailAtThisIndex == emailToFind {
                         let indexPath = NSIndexPath(forRow: index, inSection: 0)
-                        self.currentUsers.removeAtIndex(index)
+                        self.onlineUsers.removeAtIndex(index)
                         self.friendsTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                         self.friendsTableView.reloadData()
                     }
@@ -93,12 +92,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currentUsers.count
+        return onlineUsers.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("friendCell", forIndexPath: indexPath)
-        let onlineUserEmail = currentUsers[indexPath.row]
+        let onlineUserEmail = onlineUsers[indexPath.row]
         cell.textLabel?.text = onlineUserEmail
         return cell
     }
